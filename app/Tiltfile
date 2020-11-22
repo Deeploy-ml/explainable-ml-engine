@@ -1,9 +1,0 @@
-docker_build('deeploy-frontend', './apps/frontend',
-    dockerfile='./dev/dockerfiles/Dockerfile-frontend',
-    build_args={'node_env': 'development'},
-    entrypoint='npm run start',
-    live_update=[
-        sync('./apps/frontend', '/app'),
-        run('cd /app && npm install', trigger=['./package.json', './package-lock.json']),
-])
-k8s_resource('deeploy-frontend', port_forwards=['50000:4200'])
