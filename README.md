@@ -3,7 +3,7 @@
 ## Setup
 * [Install Go 1.15.5 ](https://golang.org/doc/install)
     ```bash
-    # check configuration (PATH: /usr/local/go/bin/)
+    # check configuration (check PATH e.g., /usr/local/go/bin/)
     go version
     ```
 * [Install Miniconde (Python) and create evironment:](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html#regular-installation)
@@ -37,16 +37,16 @@
     kubectl create namespace explainable-ml-engine-demo
     ```
 
-
-
 ## Deploy model
 
-* [Train model and explainer](./income_model_and_explainer.ipynb)
-* [Deploy model and explainer with KFServing Python client](./inference-server.ipynb)
+* [Train model and explainer](./1_income_model_and_explainer.ipynb)
+* [Deploy model and explainer with KFServing Python client](./2_inference_server.ipynb)
 
     ![](https://github.com/kubeflow/kfserving/raw/master/docs/diagrams/dataplane.jpg)
 
 ## Make prediction
+
+* [Interact with Inferance server API](./3_test_api.ipynb)
 
 ```bash
 INGRESS_GATEWAY_SERVICE=$(kubectl get svc --namespace istio-system --selector="app=istio-ingressgateway" --output jsonpath='{.items[0].metadata.name}')
