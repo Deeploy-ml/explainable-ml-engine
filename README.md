@@ -36,6 +36,7 @@
     ```bash
     kubectl create namespace explainable-ml-engine-demo
     ```
+![](https://github.com/kubeflow/kfserving/raw/master/docs/diagrams/kfserving.png)
 
 ## Deploy model
 
