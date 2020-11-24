@@ -23,10 +23,9 @@
     ```
     mkdir tmp
     git clone https://github.com/kubeflow/kfserving.git tmp/kfserving
-
     ```
 
-* Install Istio for Knative and KFServing for demo usage:
+* Install Istio for Knative and KFServing for `demo` usage:
 
     ```bash
     cd tmp/kfserving
@@ -36,14 +35,13 @@
     ```bash
     kubectl create namespace explainable-ml-engine-demo
     ```
-![](https://github.com/kubeflow/kfserving/raw/master/docs/diagrams/kfserving.png)
 
 ## Deploy model
 
 * [Train model and explainer](./1_income_model_and_explainer.ipynb)
 * [Deploy model and explainer with KFServing Python client](./2_inference_server.ipynb)
 
-    ![](https://github.com/kubeflow/kfserving/raw/master/docs/diagrams/dataplane.jpg)
+    ![](/media/emle.png)
 
 ## Make prediction
 

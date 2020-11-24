@@ -5,7 +5,7 @@ import json
 app = FastAPI()
 adult=fetch_adult()
 
-def jsonfy_peron(features, data, category_map):
+def jsonfy_person(features, data, category_map):
     json_data={}
     j=0
     for i in range(0,len(data)-1):
@@ -20,12 +20,12 @@ def jsonfy_peron(features, data, category_map):
 async def root():
     return {"message": "Hello World"}
 
-@app.get("/person/{id}")
+@app.get("/api/person/{id}")
 async def read_item(id: int):
     person = adult.data[id]
-    return jsonfy_peron(adult.feature_names, person, adult.category_map)
+    return jsonfy_person(adult.feature_names, person, adult.category_map)
 
-@app.get("/person/{id}/ml")
+@app.get("/api/person/{id}/ml")
 async def read_item(id: int):
     person = adult.data[id]
     model_input = {"instances":[person.tolist()]}
